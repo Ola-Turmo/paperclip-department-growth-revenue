@@ -1,0 +1,14 @@
+{
+  "departmentId": "growth-revenue",
+  "displayName": "Growth & Revenue Department",
+  "parentFunctionId": "growth",
+  "parentExecutiveRole": "growth",
+  "moduleId": null,
+  "summary": "Pipeline mechanics, lifecycle orchestration, demand generation, and revenue review.",
+  "requiredSkillBundles": [
+    "uos-growth"
+  ],
+  "missionRefs": [
+    "lead-to-close"
+  ]
+}

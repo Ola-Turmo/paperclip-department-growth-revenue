@@ -1,0 +1,18 @@
+[
+  {
+    "jobKey": "growth-weekly-pipeline-review",
+    "name": "Growth Weekly Pipeline Review",
+    "cadence": "weekly",
+    "ownerRoleKey": "growth-revops-lead",
+    "projectKey": "lead-to-close-project",
+    "goalKey": "lead-to-close-goal"
+  },
+  {
+    "jobKey": "growth-lifecycle-review",
+    "name": "Growth Lifecycle Review",
+    "cadence": "weekly",
+    "ownerRoleKey": "growth-lifecycle-lead",
+    "projectKey": "lead-to-close-project",
+    "goalKey": "lead-to-close-goal"
+  }
+]
