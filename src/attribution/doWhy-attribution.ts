@@ -45,13 +45,19 @@ export class DoWhyAttributionAnalyzer {
           outcome_var: params.outcomeVar,
           common_causes: params.commonCauses ?? ["seasonality", "economic_index", "competitive_spend"],
         }),
-      ], { timeout: 60000 });
+      ]);
 
       let stdout = "", stderr = "";
+      const timeoutId = setTimeout(() => {
+        try { proc.kill(9); } catch { /* ignore */ }
+        resolve(this.fallback(params, "python timeout"));
+      }, 5000);
+
       proc.stdout.on("data", (d) => { stdout += d.toString(); });
       proc.stderr.on("data", (d) => { stderr += d.toString(); });
 
       proc.on("close", (code) => {
+        clearTimeout(timeoutId);
         if (code === 0 && stdout.trim()) {
           try {
             const result = JSON.parse(stdout.trim());
