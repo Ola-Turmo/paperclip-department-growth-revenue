@@ -1,32 +1,21 @@
+/**
+ * Growth Revenue Department — Paperclip Plugin Manifest
+ * Stub manifest for @uos/department-growth-revenue
+ */
 import type { PaperclipPluginManifestV1 } from "@paperclipai/plugin-sdk";
 
 const manifest: PaperclipPluginManifestV1 = {
   id: "uos.department-growth-revenue",
   apiVersion: 1,
   version: "0.1.0",
-  displayName: "Department Growth Revenue",
-  description: "Department overlay for growth and revenue roles, jobs, skills, and connector policy.",
+  displayName: "Growth Intelligence Engine",
+  description: "Multi-touch attribution, AI experiment generation, growth dashboard, and revenue intelligence.",
   author: "turmo.dev",
-  categories: ["automation"],
-  capabilities: [
-    "events.subscribe",
-    "plugin.state.read",
-    "plugin.state.write"
-  ],
+  categories: ["automation", "analytics", "growth"],
+  capabilities: [],
   entrypoints: {
     worker: "./dist/worker.js",
-    ui: "./dist/ui"
   },
-  ui: {
-    slots: [
-      {
-        type: "dashboardWidget",
-        id: "health-widget",
-        displayName: "Department Growth Revenue Health",
-        exportName: "DashboardWidget"
-      }
-    ]
-  }
 };
 
 export default manifest;

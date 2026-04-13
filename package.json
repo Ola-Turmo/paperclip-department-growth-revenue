@@ -1,47 +1,22 @@
 {
   "name": "@uos/department-growth-revenue",
   "version": "0.1.0",
-  "private": true,
+  "description": "UoS Growth Intelligence Engine — multi-touch attribution, AI experiment generation, growth dashboard",
   "type": "module",
-  "description": "Department overlay for growth and revenue roles, jobs, skills, and connector policy.",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "engines": {
-    "node": ">=20"
-  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "node ./node_modules/typescript/bin/tsc -p tsconfig.json",
-    "test": "node ./node_modules/vitest/vitest.mjs run",
-    "check": "npm run build && npm test",
-    "plugin:build": "node ./esbuild.config.mjs",
-    "plugin:build:rollup": "rollup -c",
-    "plugin:dev": "node ./esbuild.config.mjs --watch",
-    "plugin:dev:ui": "paperclip-plugin-dev-server --root . --ui-dir dist/ui --port 4177",
-    "plugin:test": "vitest run --config ./vitest.plugin.config.ts",
-    "plugin:typecheck": "tsc --noEmit -p ./tsconfig.plugin.json"
+    "check": "tsc -p tsconfig.json --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@types/node": "^24.0.0",
-    "typescript": "^5.8.3",
-    "vitest": "^3.2.4",
-    "@paperclipai/plugin-sdk": "^2026.403.0",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-typescript": "^12.1.2",
-    "@types/react": "^19.0.8",
-    "esbuild": "^0.27.3",
-    "rollup": "^4.38.0",
-    "tslib": "^2.8.1"
-  },
-  "paperclipPlugin": {
-    "manifest": "./dist/manifest.js",
-    "worker": "./dist/worker.js",
-    "ui": "./dist/ui/"
-  },
-  "peerDependencies": {
-    "react": ">=18"
+    "@types/node": "^20.11.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
   }
 }
