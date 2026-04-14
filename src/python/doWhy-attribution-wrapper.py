@@ -17,7 +17,7 @@ def causal_attribution(data: dict) -> dict:
         import pandas as pd
         from dowhy import CausalModel
     except ImportError:
-        return {"error": "dowhy not installed", "channel_effects": {}, "method": "unavailable"}
+        return {"error": "dowhy not installed", "channel_effects": {}, "method": "correlation_fallback"}
 
     try:
         df = pd.DataFrame(data["channel_data"])  # cols: email, youtube, search, display, revenue, ...
