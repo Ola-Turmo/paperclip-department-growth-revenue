@@ -16,23 +16,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
 
-      - name: Setup Node
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@1a97b6e6af1ed1e6eda71bae12f49235d41e1cd5
         with:
-          node-version: 24
-          cache: npm
+          bun-version: latest
 
       - name: Install dependencies
-        run: npm install --no-fund --no-audit
+        run: bun install
 
       - name: Install Python ML dependencies
         run: pip install dowhy causalnex pandas scikit-learn --quiet
 
       - name: TypeScript check
-        run: npm run plugin:typecheck
+        run: bun run check
 
-      - name: Build plugin
-        run: npm run plugin:build
+      - name: Build
+        run: bun run build
 
-      - name: Run plugin tests
-        run: npm run plugin:test
+      - name: Run tests
+        run: bun run test

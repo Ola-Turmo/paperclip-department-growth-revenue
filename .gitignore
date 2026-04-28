@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 *.pyo
 python/__pycache__/
+bun.lock
